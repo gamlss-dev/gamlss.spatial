@@ -9,18 +9,30 @@ Authors@R: c(person("Fernanda", "De Bastiani", role = c("aut", "cre", "cph"), em
            person("Bob", "Rigby", role = c("aut"),  
            email = "r.rigby@londonmet.ac.uk" )
            )
-Description: It allows us to fit Gaussian Markov Random Field (GMRF) within the GAMLSS algorithms.
+Description: It allows us to fit Gaussian Markov Random Field (GMRF) within the
+    GAMLSS algorithms.
 License: GPL-2 | GPL-3
 URL: http://www.gamlss.org/
-Depends: R (>= 2.15.0), gamlss.dist, gamlss (>= 4.2-7), spam, mgcv
-Imports: stats, grDevices, graphics, methods
-Suggests: spdep, maptools
+Depends:
+    R (>= 2.15.0),
+    gamlss.dist,
+    gamlss (>= 4.2-7),
+    spam,
+    mgcv
+Imports:
+    stats,
+    grDevices,
+    graphics,
+    methods
+Suggests:
+    spdep,
+    maptools,
+    testthat
 Repository: CRAN
 NeedsCompilation: no
 Packaged: 2015-07-09 13:32:17 UTC; stasinom
 Author: Fernanda De Bastiani [aut, cre, cph],
-  Mikis Stasinopoulos [aut],
-  Bob Rigby [aut]
+    Mikis Stasinopoulos [aut],
+    Bob Rigby [aut]
 Maintainer: Fernanda De Bastiani <fernandadebastiani@gmail.com>
-URL: http://github.com/hadley/dplyr
-BugReports: http://github.com/hadley/dplyr/issues
+RoxygenNote: 5.0.1
