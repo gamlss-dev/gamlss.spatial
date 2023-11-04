@@ -9,25 +9,28 @@ The function \code{gmrf()} can be used to fit Markov Random Field additive terms
 }
 \usage{
 gamlss.gmrf(x, y, w, xeval = NULL, ...)
-gmrf(x, precision, neighbour, polys, area, adj.weight,  df, start, method, 
-control = gmrf.control(...), ...)
+gmrf(x, precision = NULL, neighbour = NULL, polys = NULL,
+                 area = NULL, adj.weight = 1000, df = NULL, lambda =
+                 NULL, start = 10, method = c("Q", "A"), control =
+                 gmrf.control(...), ...)
 }
 
+  
 \arguments{
   \item{x}{a factor containing the areas}
   \item{precision}{the precision matrix if set}
  \item{neighbour}{an object containing the neighbour information for the area if set}
   \item{polys}{the polygon information if set}
   \item{area}{this argument is here to allow more areas than the levels of the factor \code{x}, see example below} 
-  \item{start}{starting value for the smoothing parameter \code{lambda}
-}
-  \item{df}{degrees of freedom for fitting if required, only for \code{method="A"}}
-  \item{method}{"Q" for Q-function, or "A" for alternating mehtod}
   \item{adj.weight}{a value to adjust the iterative weight if necessary}
+  \item{df}{degrees of freedom for fitting if required, only for \code{method="A"}}
+   \item{lambda}{The smoothing parameter \code{lambda} if known, only for \code{method="A"}}
+  \item{start}{starting value for the smoothing parameter \code{lambda}}
+  \item{method}{"Q" for Q-function, or "A" for alternating method}
   \item{y}{working response variable}
   \item{w}{iterative weights}
   \item{xeval}{whether to predict or not}
-   \item{control}{to be use for some of the srgument of \code{MRF()}.}
+   \item{control}{to be use for some of the argument of \code{MRF()}.}
   \item{\dots}{for extra arguments}
 }
 \details{
@@ -39,16 +42,27 @@ The results using the option \code{method="Q"} or \code{method="A"} should produ
 a fitted gamlss object
 }
 \references{
+
+De Bastiani, F. Rigby, R. A., Stasinopoulos, D. M.,  Cysneiros, A. H. M. A. and Uribe-Opazo, M. A. (2016) Gaussian Markov random spatial models in GAMLSS. \emph{Journal of Applied Statistics}, pp 1-19.
+
 Rigby, R. A. and  Stasinopoulos D. M. (2005). Generalized additive models for location, scale and shape,(with discussion), 
 \emph{Appl. Statist.}, \bold{54}, part 3, pp 507-554.
 
+
+Rigby, R. A., Stasinopoulos, D. M.,  Heller, G. Z.,  and De Bastiani, F. (2019)
+	\emph{Distributions for modeling location, scale, and shape: Using GAMLSS in R}, Chapman and Hall/CRC. An older version can be found in \url{https://www.gamlss.com/}.
+
+
 Rue and Held (2005) \emph{Gaussian markov random fields: theory and applications}, Chapman  & Hall, USA. 
 
-Stasinopoulos D. M., Rigby R.A. and Akantziliotou C. (2006) Instructions on how to use the GAMLSS package in R.
-Accompanying documentation in the current GAMLSS  help files, (see also  \url{http://www.gamlss.org/}).
-
 Stasinopoulos D. M. Rigby R.A. (2007) Generalized additive models for location scale and shape (GAMLSS) in R.
-\emph{Journal of Statistical Software}, Vol. \bold{23}, Issue 7, Dec 2007, \url{http://www.jstatsoft.org/v23/i07}.
+\emph{Journal of Statistical Software}, Vol. \bold{23}, Issue 7, Dec 2007, \url{https://www.jstatsoft.org/v23/i07/}.
+
+Stasinopoulos D. M., Rigby R.A., Heller G., Voudouris V., and De Bastiani F., (2017)
+\emph{Flexible Regression and Smoothing: Using GAMLSS in R},  Chapman and Hall/CRC.  
+
+(see also \url{https://www.gamlss.com/}).
+
 }
 \author{Fernanda De Bastiani, Mikis Stasinopoulos, Robert Rigby and Vlasios Voudouris. 
 
